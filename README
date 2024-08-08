@@ -1,0 +1,14 @@
+Welcome to the VASP_DOS program.
+It converts DOSCAR files of a VASP density of state calculation to an easily plottable form.
+You can plot DOS Vs Energy using gnuplot, python, xmgrace etc.
+
+1. I need 1.POSCAR   2.OUTCAR(with correct E-fermi)   3.DOSCAR
+2. It resolves the DOS by element, atom, spin polarization and orbitals all in one go.
+3. The first column is the energy and other columns are density of states.
+4. The sequence of the orbital resolved columns is same as that given in VASP website (https://www.vasp.at/wiki/index.php/DOSCAR):
+   energy  s  p_y p_z p_x d_{xy} d_{yz} d_{z2-r2} d_{xz} d_{x2-y2}
+5. a) For ISPIN = 1 nonmagnetic calculation run : dos_DOSCAR_nonmag1.sh
+   b) For ISPIN = 2 Spin-Polarized, Collinear calculation run : dos_DOSCAR_nonsoc4.sh. 
+      This will generate UP and Down Spin polarized density files separately.
+   c) For Noncollinear calculation run : dos_DOSCAR_soc.sh.
+      This will generate total density (including all directions of spin), MX, MY and MZ polarized density files separately.
